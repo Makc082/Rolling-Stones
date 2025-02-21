@@ -1,0 +1,380 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Плавне прокручування */
+}
+
+body {
+    text-align: center;
+    color: white;
+}
+
+/* Фон екрана */
+.hero {
+    background-image: url(images/unnamed.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 5px black;
+}
+
+
+.buttons {
+    margin-top: 10px;
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background: rgb(110, 99, 232);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.buttons a:hover {
+    transform: scale(1.1);
+    background: rgb(36, 12, 212);
+}
+
+/* Контент після фото */
+.content {
+    background: grey;
+    color: black;
+    padding: 50px;
+}
+
+.section {
+    padding: 50px;
+    margin-top: 20px;
+}
+
+.formatted-text {
+    white-space: pre-line;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+.inherit-property {
+    float: left;
+    height: 150px;
+    width: 30%;
+    border: 3px;
+    border-radius: 10%;
+    border-color: black;
+    margin: 1.5%;
+    overflow: inherit;
+}
+
+/* Головний Grid-контейнер */
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%; /* Одна колонка */
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.concert-info {
+    border: 2px solid black;
+    padding: 20px;
+    background: #413f3f;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.concert-info h2 {
+    text-align: left;
+    color: #229b6f;
+}
+
+.concert-info p {
+    margin-bottom: 10px;
+}
+
+/* Права колонка: Таймер або додаткова інформація */
+.extra-info {
+    border: 2px solid black;
+    padding: 20px;
+    background: #9a8ba9;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.extra-info h2 {
+    text-align: center;
+    color: #333;
+}
+
+.extra-info p {
+    margin-bottom: 10px;
+}
+
+
+
+/* Адаптивний вигляд на мобільних пристроях */
+@media (max-width: 768px) {
+.grid-container {
+    grid-template-columns: 1fr; /* Одна колонка на малих екранах */
+ }
+ .hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+ }
+ .hero h1 {
+    font-size: 2em;
+ }
+ .buttons a {
+    padding: 10px;
+    margin: 10px;
+ }
+ .content {
+    padding: 20px;
+ }
+ .section {
+    padding: 20px;
+ }  
+ .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Дві колонки на малих екранах */
+ }
+ .gallery img {
+    width: 100%;
+    margin: 10px;
+ }
+ .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+ }
+ .modal img {
+    max-width: 90%;
+    max-height: 90%;
+ }
+ .container {
+    width: 90%;
+    margin: 0 auto;
+ }
+ .order-form {
+    padding: 20px;
+ }
+ .order-form label {
+    display: block;
+    margin: 10px 0 5px;
+ }
+ .order-form input,.order-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+ }
+ iframe {
+    width: 100%;
+    height: 300px;
+ }
+}
+
+/* Адаптивний вигляд на таблетках */
+@media (max-width: 1024px) {
+ .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Дві колонки на таблетках */
+  }
+ .hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+ }
+ .hero h1 {
+    font-size: 2.5em;
+ }
+ .buttons a {
+    padding: 15px;
+    margin: 15px;
+ }
+ .content {
+    padding: 30px;
+ }
+ .section {
+    padding: 30px;
+ }
+ .gallery {
+    grid-template-columns: repeat(3, 1fr); /* Три колонки на таблетках */
+ }
+ .gallery img {
+    width: 100%;
+    margin: 15px;
+ }
+ .container {
+    width: 80%;
+    margin: 0 auto;
+ }
+ .order-form {
+    padding: 30px;
+ }
+ .order-form label {
+    display: block;
+    margin: 15px 0 10px;
+ }
+ .order-form input,.order-form select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+ }
+ iframe {
+    width: 100%;
+    height: 400px;
+ }
+} 
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);/* три в ряд */
+    gap: 100px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery img {
+    width: 100%;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Модульне вікно */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Відкриття фото */
+.modal:target {
+    display: flex;
+}
+
+/*Закриття фото */
+.close {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.close:hover {
+    color: red;
+}
+
+.media video, .media audio {
+    margin-top: 20px;
+    margin-left: 500px;
+    width: 50%;
+}    
+
+.container {
+    width: 50%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #1a1a1a(255, 255, 255, 0,8);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin: 10px 0;
+}
+a {
+    text-decoration: none;
+    color: rgb(133, 207, 133);
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+ /* Форма замовлення */
+ .order-form {
+    background: #886767;
+    padding: 40px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.order-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #1a1717;
+}
+
+.order-form input, .order-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.order-form button {
+    background: rgb(110, 99, 232);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.order-form button:hover {
+    background: rgb(36, 12, 212);
+    transform: scale(1.05);
+}
